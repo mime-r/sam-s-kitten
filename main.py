@@ -15,7 +15,7 @@ menu = DefaultMenu()
 bot = Bot(command_prefix='k!', help_command=PrettyHelp(menu=menu, index_title="sam's kitten :D", no_category="Unclassified"))
 
 
-TOKEN = "ODQzNjUyMTYyNzk4MDkyMzA5.YKG-TQ.afG5SryYFmGeGRVYMn29s7b4AQE"
+TOKEN = "[insert token here]"
 
 client = discord.Client()
 
