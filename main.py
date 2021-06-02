@@ -15,7 +15,7 @@ menu = DefaultMenu()
 bot = Bot(command_prefix='k!', help_command=PrettyHelp(menu=menu, index_title="sam's kitten :D", no_category="Unclassified"))
 
 
-TOKEN = "[insert token here]"
+TOKEN = "insert token here"
 
 client = discord.Client()
 
@@ -78,6 +78,7 @@ async def on_ready():
     index = 1
     for server in bot.guilds:
         print("{0}: {1}".format(index, server.name))
+        
         print(server.id, server.owner_id)
         index += 1
 
@@ -112,7 +113,7 @@ class entertainment(commands.Cog, name="Fun stuff", description="really fun stuf
 
 from waifu import WaifuClient
 
-client = WaifuClient()
+aclient = WaifuClient()
 
 
 class waifu_(commands.Cog, name="Waifu", description="don't you love waifus."):
@@ -127,7 +128,7 @@ class waifu_(commands.Cog, name="Waifu", description="don't you love waifus."):
             data = requests.get(f"https://api.nekos.dev/api/v3/images/sfw/img/{random.choice(self.img)}").json()
             await ctx.send(data["data"]["response"]["url"])
         else:
-            sfw_waifu = client.sfw(category='waifu')
+            sfw_waifu = aclient.sfw(category='waifu')
             await ctx.send(sfw_waifu)
             
     @commands.command(name="w", hidden=True)
@@ -136,7 +137,7 @@ class waifu_(commands.Cog, name="Waifu", description="don't you love waifus."):
             data = requests.get(f"https://api.nekos.dev/api/v3/images/sfw/img/{random.choice(self.img)}").json()
             await ctx.send(data["data"]["response"]["url"])
         else:
-            sfw_waifu = client.sfw(category='waifu')
+            sfw_waifu = aclient.sfw(category='waifu')
             await ctx.send(sfw_waifu)
 
     @commands.command(name="smug", help="smug")
